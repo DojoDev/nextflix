@@ -1,5 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Link from "next/link";
+import GoogleIcon from "../../../public/google.svg";
+import { GithubIcon } from "lucide-react";
+
+import  Image from "next/image";
 
 export default function SingUp(){
    return(
@@ -7,8 +12,25 @@ export default function SingUp(){
       <form>
          <h1 className="text-3xl font-semibold text-white">Sign Up</h1>
          <div className="space-y-4 mt-5">
-           <Input />
-           <Button>Sign Up</Button>
+           <Input 
+           type="email"
+           name="email"
+           placeholder="Email"
+           className="bg-[#333] placeholder:text-xs placeholder:text-gray-400 w-full inline-block"/>
+           <Button type="submit" variant="destructive" className="w-full bg-[#e50914]">Sign Up</Button>
+         </div>
+         <div className="text-gray-500 text-sm mt-2">
+          Already New a Account? {" "}
+          <Link className="text-white hover:underline" href="/login">Log In Now</Link>
+
+          <div className="flex w-full justify-center items-center gap-x-3 mt-6">
+            <Button variant="outline" size="icon">
+              <GithubIcon className="w-4 h-4" />
+            </Button>
+            <Button variant="outline" size="icon">
+              <Image src={GoogleIcon} alt="Google Icon" className="w-4 h-4" />
+            </Button>
+          </div>
          </div>
       </form>
     </div>
