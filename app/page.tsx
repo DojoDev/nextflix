@@ -1,14 +1,18 @@
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { getServerSession } from "next-auth";
+import { authOptions } from "./utils/auth";
+import { ReactNode } from "react";
 
 
-export default function Home() {
+export default async function Home({children}:{children:ReactNode}) {
+  const session = await getServerSession(authOptions)
   return (
     <>
     <div className="md-5">
 
     <Button variant="ghost">Hello from shadcn/ui</Button>
-    <h1>hello from the index page</h1>
+    {children}
+    <h1>{session?.user?.name}</h1>
     </div>
     </>
   )

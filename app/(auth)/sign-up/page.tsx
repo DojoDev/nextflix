@@ -19,11 +19,14 @@ export default function SingUp(){
            className="bg-[#333] placeholder:text-xs placeholder:text-gray-400 w-full inline-block"/>
            <Button type="submit" variant="destructive" className="w-full bg-[#e50914]">Sign Up</Button>
          </div>
-         <div className="text-gray-500 text-sm mt-2">
+      </form>
+
+      <div className="text-gray-500 text-sm mt-2">
           Already New a Account? {" "}
           <Link className="text-white hover:underline" href="/login">Log In Now</Link>
+         </div>
 
-          <div className="flex w-full justify-center items-center gap-x-3 mt-6">
+      <div className="flex w-full justify-center items-center gap-x-3 mt-6">
             <Button variant="outline" size="icon">
               <GithubIcon className="w-4 h-4" />
             </Button>
@@ -31,8 +34,6 @@ export default function SingUp(){
               <Image src={GoogleIcon} alt="Google Icon" className="w-4 h-4" />
             </Button>
           </div>
-         </div>
-      </form>
     </div>
    )
 }
